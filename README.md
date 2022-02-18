@@ -11,15 +11,13 @@
 ```
 google-chrome -version
 ```
-# Install requirements
+## Install requirements
 ```
 pip3 install -r requirements.txt
 ```
 # Run it !
 
 ```
-git clone https://github.com/eternalodball/inscreate
-cd inscreate
 python3 ac.py
 ```
 # Note - 
