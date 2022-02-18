@@ -86,7 +86,7 @@ print( color.GREEN + "[!] " + color.CWHITE + "Generated Email : " + response_ema
 
 time.sleep(0.500)
 
-username_file = open(os.getcwd() + "/user.txt", "r" )
+username_file = open(os.getcwd() + "/usernames.txt", "r" )
 lines = [line.rstrip() for line in username_file]
 
 chose_random_username_list = random.sample(lines, k=1)
