@@ -35,7 +35,7 @@ pip3 install -r requirements.txt
 ```
 git clone https://github.com/eternalodball/inscreate
 cd inscreate
-python3 main.py
+python3 ac.py
 ```
 # Note - 
 >### if you try to use it twice with same ip then ig will probably block you use proxy to avoid it
