@@ -9,7 +9,6 @@ from selenium.webdriver.common.proxy import Proxy , ProxyType
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
-from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 from webdriver_manager.chrome import ChromeDriverManager
 from fake_useragent import UserAgent
 
@@ -24,8 +23,7 @@ class color:
 #API
 
 print(color.BOLD)
-#YOUR_API_KEY = input(color.GREEN + '[~] ' + color.CWHITE + 'ENTER YOUR API KEY : ')
-YOUR_API_KEY = "73f628e9c7msh97e06b0997fdb30p11d02djsn70d49c150b71"
+YOUR_API_KEY = input(color.GREEN + '[~] ' + color.CWHITE + 'ENTER YOUR API KEY : ')
 
 #Fake useragent
 
@@ -37,9 +35,10 @@ userAgent = ua.random
 
 prox = Proxy()
 prox.proxy_type = ProxyType.MANUAL
-prox.http_proxy = "83.97.23.90:33849"
+
+#prox.http_proxy = "ip_addr:port"   Remove '#' from below code to use proxy
 #prox.socks_proxy = "ip_addr:port"
-prox.ssl_proxy = "83.97.23.90:33849"
+#prox.ssl_proxy = "ip_addr:port"
 
 capabilities = webdriver.DesiredCapabilities.CHROME
 prox.add_to_capabilities(capabilities)
@@ -48,38 +47,21 @@ prox.add_to_capabilities(capabilities)
 #webdriver
 
 url = "https://www.instagram.com/accounts/emailsignup/"
-CHROME_DIR = "/home/aao/Desktop/instagram/webdrivers/chromedriver"
+CHROME_DIR = ""
 
 browser = webdriver.Chrome(CHROME_DIR, chrome_options=options, desired_capabilities=capabilities)
 
 print()
 print( color.GREEN + "[+ ]" + color.CWHITE + "Using useragent as : " + userAgent)
 
-#  ************************JUNK FILES****************************
-
-
-#browser = webdriver.Firefox(executable_path= "/home/aao/Desktop/instagram/webdrivers/geckodriver")
-#browser = webdriver.Remote(
-#    "https://oauth-eternalodball-e5ca4:b4c4d09a-9c13-459b-a436-532f1682a311@ondemand.eu-central-1.saucelabs.com:443/wd/hub"
-#);
-
-#browser.test.allTheThings(CHROME_DVR_DIR)
-#ClearCache before opening url (currently not working)
-
-#browser.get('chrome://settings/clearBrowserData')
-#browser.find_element_by_id('clearBrowsingDataConfirm').click()
-
-
-# ***************************************************************
-
-
-
 #Open ig signup url
+
+url = "https://www.instagram.com/accounts/emailsignup/"
 browser.get(url)
 
 #elements
 
-time.sleep(4)
+time.sleep(3.517)
 email = browser.find_element_by_css_selector('div.WZdjL:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
 fullname = browser.find_element_by_css_selector('div.WZdjL:nth-child(5) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
 username = browser.find_element_by_css_selector('div.WZdjL:nth-child(6) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
@@ -141,10 +123,13 @@ my_password = generated_random_password
 #Fill the page
 
 email.send_keys(my_email)
+time.sleep(0.517)
 fullname.send_keys(my_fullname)
+time.sleep(0.312)
 username.send_keys(my_username)
+time.sleep(0.125)
 Password.send_keys(generated_random_password)
-time.sleep(1)
+time.sleep(0.104)
 Password.send_keys(Keys.ENTER)
 time.sleep(6)
 
@@ -158,7 +143,9 @@ birthday_next_button = browser.find_element_by_css_selector('#react-root > secti
 #Fill the page
 
 birthday_month.click()
+time.sleep(0.120)
 birthday_day.click()
+time.sleep(0.114)
 birthday_year.click()
 time.sleep(2)
 birthday_next_button.click()
