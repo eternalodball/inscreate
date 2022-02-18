@@ -3,11 +3,11 @@
 1. Go to https://rapidapi.com/zenno.dmv/api/temporary-mail-afeg-ru/pricing
 2. Chose the free plan and get an api for free 
 
-# Setup in linux
+# Setup
 
 1. Go to https://chromedriver.chromium.org/downloads
 2. Chose and download any correct version </br>
-3. You can check your current chrome version using the following command :-
+3. You can check your current chrome version using the following command (linux or mac) :-
 ```
 google-chrome -version
 ```
