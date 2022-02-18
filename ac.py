@@ -36,7 +36,7 @@ userAgent = ua.random
 prox = Proxy()
 prox.proxy_type = ProxyType.MANUAL
 
-#prox.http_proxy = "ip_addr:port"   Remove '#' from below code to use proxy
+#prox.http_proxy = "ip_addr:port"   # Remove '#' to use proxy
 #prox.socks_proxy = "ip_addr:port"
 #prox.ssl_proxy = "ip_addr:port"
 
@@ -107,7 +107,7 @@ chose_random_password_list = random.sample(lines, k=1)
 
 random_password_string = ''.join(chose_random_password_list)
 
-random_password_number = str(random.randint(1000000, 2000000))
+random_password_number = str(random.randint(1000, 2000))
 
 generated_random_password = random_password_string + random_password_number
 
