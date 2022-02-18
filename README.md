@@ -11,22 +11,7 @@
 ```
 google-chrome -version
 ```
-
-# Run in linux
-
-### Either, Install manually using the following commands :-
-
-Install python3 and pip 
-```
-sudo apt install python3-pip
-```
-Install selenium and requests
-```
-pip3 install selenium
-pip3 install requests
-```
-### OR , Install everything using script :-
-
+# Install requirements
 ```
 pip3 install -r requirements.txt
 ```
