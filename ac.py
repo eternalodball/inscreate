@@ -28,7 +28,7 @@ try:
     API_TEXT_FILE = open('api.txt', 'r').readlines()
     for line in API_TEXT_FILE:
         YOUR_API_KEY = str(line)
-    print(color.GREEN + '[~]' + color.CWHITE + 'USING API KEY AS : ' + YOUR_API_KEY + ')
+    print(color.GREEN + '[~]' + color.CWHITE + 'USING API KEY AS : ' + YOUR_API_KEY )
 
 except Exception as err:
     YOUR_API_KEY = input(color.GREEN + '[~] ' + color.CWHITE + 'ENTER YOUR API KEY : ')
