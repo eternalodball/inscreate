@@ -37,10 +37,12 @@ except Exception as err:
 
          
 #Fake useragent
-
 options = Options()
 ua = UserAgent()
 userAgent = ua.random
+
+#Headless mode (set as true to use)
+options.headless = False
 
 #Proxy (highly required)
 
@@ -60,7 +62,7 @@ capabilities = webdriver.DesiredCapabilities.CHROME
 url = "https://www.instagram.com/accounts/emailsignup/"
 CHROME_DIR = ""
 
-browser = webdriver.Chrome(CHROME_DIR, chrome_options=options, desired_capabilities=capabilities)
+browser = webdriver.Chrome(CHROME_DIR, options=options, desired_capabilities=capabilities)
 
 print()
 print( color.GREEN + "[+ ]" + color.CWHITE + "Using useragent as : " + userAgent)
