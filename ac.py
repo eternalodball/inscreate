@@ -129,9 +129,9 @@ time.sleep(0.312)
 username.send_keys(my_username)
 time.sleep(0.125)
 Password.send_keys(generated_random_password)
-time.sleep(0.104)
+time.sleep(1)
 Password.send_keys(Keys.ENTER)
-time.sleep(6)
+time.sleep(5)
 
 #elements next page
 
@@ -208,4 +208,4 @@ fill_otp.send_keys(Keys.ENTER)
 print(color.GREEN + '[!] ' + color.CWHITE + 'Saving account info as account_generated.txt ')
 print()
 with open("account_generated.txt","a") as file:
-    file.write(my_email + " : " + my_password)
+    file.write(my_email + ":" + my_password)
