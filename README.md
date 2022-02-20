@@ -1,6 +1,5 @@
 # inscreate
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/get-gecko-driver?color=blue)](https://www.python.org/downloads)
-[![PyPI - Status](https://img.shields.io/pypi/status/get-gecko-driver)](https://www.youtube.com/watch?v=VJAVse3qk0I)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://python.org)
 
 # Usage
 
