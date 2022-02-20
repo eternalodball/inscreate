@@ -1,5 +1,6 @@
 # inscreate
-
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/get-gecko-driver?color=blue)](https://www.python.org/downloads)
+[![PyPI - Status](https://img.shields.io/pypi/status/get-gecko-driver)](https://github.com/eternalodball)
 
 # Usage
 
