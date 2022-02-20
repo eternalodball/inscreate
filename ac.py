@@ -19,12 +19,23 @@ class color:
    GREEN = '\033[92m'
    BOLD = '\033[1m'
    CWHITE  = '\33[37m'
+   
+print(color.BOLD)
 
 #API
 
-print(color.BOLD)
-YOUR_API_KEY = input(color.GREEN + '[~] ' + color.CWHITE + 'ENTER YOUR API KEY : ')
+try:
+    API_TEXT_FILE = open('api.txt', 'r').readlines()
+    for line in API_TEXT_FILE:
+        YOUR_API_KEY = str(line)
+    print(color.GREEN + '[~]' + color.CWHITE + 'USING API KEY AS : ' + YOUR_API_KEY + '(edit api.txt to change)')
 
+except Exception as err:
+    YOUR_API_KEY = input(color.GREEN + '[~] ' + color.CWHITE + 'ENTER YOUR API KEY : ')
+    with open("api.txt","w") as file:
+        file.write(YOUR_API_KEY)
+
+         
 #Fake useragent
 
 options = Options()
