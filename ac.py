@@ -36,12 +36,12 @@ userAgent = ua.random
 prox = Proxy()
 prox.proxy_type = ProxyType.MANUAL
 
-#prox.http_proxy = "ip_addr:port"   # Remove '#' to use proxy
-#prox.socks_proxy = "ip_addr:port"
-#prox.ssl_proxy = "ip_addr:port"
+prox.http_proxy = "ip_addr:port"
+prox.socks_proxy = "ip_addr:port"
+prox.ssl_proxy = "ip_addr:port"
 
 capabilities = webdriver.DesiredCapabilities.CHROME
-prox.add_to_capabilities(capabilities)
+#prox.add_to_capabilities(capabilities) # Remove '#' to use proxy
 
 
 #webdriver
