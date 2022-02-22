@@ -85,7 +85,7 @@ signup_button = browser.find_element_by_css_selector('div.bkEs3:nth-child(1)')
 
 browser.execute_script("window.open('');")
 
-browser.switch_to.window(driver.window_handles[1])
+browser.switch_to.window(browser.window_handles[1])
 
 browser.get("https://mail.tm")
 
