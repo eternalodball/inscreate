@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import sys , os , random , requests , time
+import sys , os , random , requests , time , pyperclip
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -83,17 +83,22 @@ signup_button = browser.find_element_by_css_selector('div.bkEs3:nth-child(1)')
 
 # Create temporary email
 
-url = "https://temporary-mail-afeg-ru.p.rapidapi.com/api/email/login@domain/request"
+browser.execute_script("window.open('');")
 
-headers = {
-'x-rapidapi-host': "temporary-mail-afeg-ru.p.rapidapi.com",
-'x-rapidapi-key': YOUR_API_KEY
-}
+browser.switch_to.window(driver.window_handles[1])
 
-response_email = requests.request("GET", url, headers=headers)
+browser.get("https://mail.tm")
+
+time.sleep(4)
+
+copy_button = driver.find_element(By.XPATH, """//*[@id="address"]""")
+
+copy_button.click()
+
+generated_email = pyperclip.paste()
 
 print()
-print( color.GREEN + "[!] " + color.CWHITE + "Generated Email : " + response_email.text)
+print( color.GREEN + "[!] " + color.CWHITE + "Generated Email : " + generated_email)
 
 #Create Random username
 
@@ -128,7 +133,7 @@ print( color.GREEN + "[!] " + color.CWHITE +"Generated password = " + generated_
 
 #Fields to use 
 
-my_email = response_email.text
+my_email = generated_email
 my_fullname = 'BOT KILLER'
 my_username = generated_random_username
 my_password = generated_random_password
