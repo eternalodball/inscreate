@@ -3,6 +3,7 @@
 import sys , os , random , requests , time , pyperclip
 from time import sleep
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.proxy import Proxy , ProxyType
@@ -99,6 +100,8 @@ generated_email = pyperclip.paste()
 
 print()
 print( color.GREEN + "[!] " + color.CWHITE + "Generated Email : " + generated_email)
+
+browser.switch_to.window(browser.window_handles[0])
 
 #Create Random username
 
