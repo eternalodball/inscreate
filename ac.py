@@ -91,7 +91,7 @@ browser.get("https://mail.tm")
 
 time.sleep(4)
 
-copy_button = driver.find_element(By.XPATH, """//*[@id="address"]""")
+copy_button = browser.find_element(By.XPATH, """//*[@id="address"]""")
 
 copy_button.click()
 
