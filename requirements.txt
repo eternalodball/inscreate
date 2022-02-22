@@ -2,3 +2,4 @@ requests
 selenium
 webdriver_manager
 fake_useragent
+pyperclip
