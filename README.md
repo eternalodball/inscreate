@@ -1,4 +1,4 @@
-# inscreate
+# inscreate (mail service currently not working don't waste time , update will come soon thanks)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://python.org)
 
 # Usage
