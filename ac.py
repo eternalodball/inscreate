@@ -206,5 +206,9 @@ fill_otp.send_keys(Keys.ENTER)
 
 print(color.GREEN + '[!] ' + color.CWHITE + 'Saving account info as account_generated.txt ')
 print()
-with open("account_generated.txt","a") as file:
-    file.write(my_email + ":" + my_password)
+with open("account_generated.txt","a+") as file:
+    file.seek(0)
+    data = file.read(10000)
+    if len(data) > 0 :
+       file.write("\n")
+       file.write(my_email + " : " + my_password)
