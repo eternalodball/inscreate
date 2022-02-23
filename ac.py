@@ -22,20 +22,6 @@ class color:
    CWHITE  = '\33[37m'
    
 print(color.BOLD)
-
-#API
-
-try:
-    API_TEXT_FILE = open('api.txt', 'r').readlines()
-    for line in API_TEXT_FILE:
-        YOUR_API_KEY = str(line)
-    print(color.GREEN + '[~]' + color.CWHITE + 'USING API KEY AS : ' + YOUR_API_KEY )
-
-except Exception as err:
-    YOUR_API_KEY = input(color.GREEN + '[~] ' + color.CWHITE + 'ENTER YOUR API KEY : ')
-    with open("api.txt","w") as file:
-        file.write(YOUR_API_KEY)
-
          
 #Fake useragent
 options = Options()
@@ -61,7 +47,7 @@ capabilities = webdriver.DesiredCapabilities.CHROME
 #webdriver
 
 url = "https://www.instagram.com/accounts/emailsignup/"
-CHROME_DIR = ""
+CHROME_DIR = "/usr/bin/chromedriver"
 
 browser = webdriver.Chrome(CHROME_DIR, options=options, desired_capabilities=capabilities)
 
@@ -76,11 +62,11 @@ browser.get(url)
 #elements
 
 time.sleep(3.517)
-email = browser.find_element_by_css_selector('div.WZdjL:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-fullname = browser.find_element_by_css_selector('div.WZdjL:nth-child(5) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-username = browser.find_element_by_css_selector('div.WZdjL:nth-child(6) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-Password = browser.find_element_by_css_selector('div.WZdjL:nth-child(7) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-signup_button = browser.find_element_by_css_selector('div.bkEs3:nth-child(1)')
+email = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
+fullname = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(5) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
+username = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(6) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
+Password = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(7) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
+signup_button = browser.find_element(By.CSS_SELECTOR, 'div.bkEs3:nth-child(1)')
 
 # Create temporary email
 
@@ -90,7 +76,7 @@ browser.switch_to.window(browser.window_handles[1])
 
 browser.get("https://mail.tm")
 
-time.sleep(4)
+time.sleep(6)
 
 copy_button = browser.find_element(By.XPATH, """//*[@id="address"]""")
 
@@ -156,10 +142,10 @@ time.sleep(5)
 
 #elements next page
 
-birthday_month = browser.find_element_by_css_selector('#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(1) > select > option:nth-child(9)')
-birthday_day = browser.find_element_by_css_selector('#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(2) > select > option:nth-child(25)')
-birthday_year = browser.find_element_by_css_selector('#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(3) > select > option:nth-child(26)')
-birthday_next_button = browser.find_element_by_css_selector('#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.lC6p0.g6RW6 > button')
+birthday_month = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(1) > select > option:nth-child(9)')
+birthday_day = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(2) > select > option:nth-child(25)')
+birthday_year = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(3) > select > option:nth-child(26)')
+birthday_next_button = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.lC6p0.g6RW6 > button')
 
 #Fill the page
 
@@ -188,7 +174,7 @@ sys.stdout.write("\rComplete!            \n")
 
 # otp page element
 
-fill_otp = browser.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div/div[1]/input')
+fill_otp = browser.find_element(By.XPATH,'//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div/div[1]/input')
 
 # send mail read request
 
