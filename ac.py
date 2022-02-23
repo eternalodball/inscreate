@@ -52,7 +52,7 @@ CHROME_DIR = "/usr/bin/chromedriver"
 browser = webdriver.Chrome(CHROME_DIR, options=options, desired_capabilities=capabilities)
 
 print()
-print( color.GREEN + "[+ ]" + color.CWHITE + "Using useragent as : " + userAgent)
+print( color.GREEN + "[+] " + color.CWHITE + "Using useragent as : " + userAgent)
 
 #Open ig signup url
 
@@ -136,7 +136,6 @@ time.sleep(0.312)
 username.send_keys(my_username)
 time.sleep(0.125)
 Password.send_keys(generated_random_password)
-time.sleep(1)
 Password.send_keys(Keys.ENTER)
 time.sleep(5)
 
@@ -159,6 +158,7 @@ birthday_next_button.click()
 
 #Display countdown
 
+browser.switch_to.window(browser.window_handles[1])
 print()
 print(color.GREEN + "[!] " + color.CWHITE + "Waiting for otp ")
 
@@ -174,37 +174,29 @@ sys.stdout.write("\rComplete!            \n")
 
 # otp page element
 
-fill_otp = browser.find_element(By.XPATH,'//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div/div[1]/input')
+read_otp = browser.find_element(By.XPATH, '//*[@id="__layout"]/div/div[2]/main/div/div[2]/ul/li/a/div/div[1]/div[2]/div[2]/div/div[1]').text
 
-# send mail read request
-
-url = "https://temporary-mail-afeg-ru.p.rapidapi.com/api/messages/" + my_email + "/request"
-
-headers = {
-    'x-rapidapi-host': "temporary-mail-afeg-ru.p.rapidapi.com",
-    'x-rapidapi-key': YOUR_API_KEY
-    }
-
-response = requests.get(url, headers=headers)
-
-otp_response = response.text
+# Read otp from mail
 
 # Save response to response.Text
 
 with open("response.text","w") as file:
-   file.write(str(otp_response))
+   file.write(str(read_otp))
 
-# Read otp from response
+read_otp_file = open("response.text")
 
-otp_file = open("response.text")
-
-lines = otp_file.readlines()
+lines = read_otp_file.readlines()
 
 for line in lines:
-    my_otp = str(line[13:19])
-    print(color.GREEN + "[!] " + color.CWHITE + "OTP Recieved : " + my_otp)
+   my_otp = str(line[1:6])
+
+print(color.GREEN + "[!] " + color.CWHITE + "OTP Recieved : " + my_otp)
 
 # fill otp
+
+browser.switch_to.window(browser.window_handles[0])
+time.sleep(1)
+fill_otp = browser.find_element(By.XPATH,'//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div/div[1]/input')
 
 fill_otp.send_keys(my_otp)
 time.sleep(2)
