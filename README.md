@@ -1,10 +1,5 @@
-# inscreate (mail service currently not working don't waste time , update will come soon thanks)
+# inscreate
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://python.org)
-
-# Usage
-
-1. Go to https://rapidapi.com/zenno.dmv/api/temporary-mail-afeg-ru/pricing
-2. Chose the free plan and get an api for free 
 
 # Setup
 
