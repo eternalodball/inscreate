@@ -171,6 +171,8 @@ for remaining in range(15, 0, -1):
     time.sleep(1)
 
 sys.stdout.write("\rComplete!            \n")
+browser.refresh()
+time.sleep(2)
 
 # otp page element
 
