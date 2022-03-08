@@ -21,4 +21,3 @@ python3 ac.py
 ```
 # Note - 
 >### if you try to use it twice with same ip then ig will probably block you , use proxy to avoid it
-[Video demo](https://www.youtube.com/watch?v=VJAVse3qk0I)
