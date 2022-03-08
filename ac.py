@@ -31,6 +31,9 @@ userAgent = ua.random
 #Headless mode (set as true to use)
 options.headless = False
 
+#Don't close the browser
+options.add_experimental_option("detach", True)
+
 #Proxy (highly required)
 
 prox = Proxy()
