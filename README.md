@@ -1,4 +1,4 @@
-# inscreate (fixed all bugs)
+# inscreate
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://python.org)
 
 # Setup
