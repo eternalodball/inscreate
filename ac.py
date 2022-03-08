@@ -50,7 +50,7 @@ capabilities = webdriver.DesiredCapabilities.CHROME
 #webdriver
 
 url = "https://www.instagram.com/accounts/emailsignup/"
-CHROME_DIR = ""
+CHROME_DIR = "/home/odball/Downloads/chromedriver"
 
 browser = webdriver.Chrome(CHROME_DIR, options=options, desired_capabilities=capabilities)
 
@@ -117,7 +117,7 @@ chose_random_password_list = random.sample(lines, k=1)
 
 random_password_string = ''.join(chose_random_password_list)
 
-random_password_number = str(random.randint(1000, 2000))
+random_password_number = str(random.randint(10000, 20000))
 
 generated_random_password = random_password_string + random_password_number
 
@@ -139,6 +139,7 @@ time.sleep(0.312)
 username.send_keys(my_username)
 time.sleep(0.125)
 Password.send_keys(generated_random_password)
+time.sleep(2)
 Password.send_keys(Keys.ENTER)
 time.sleep(5)
 
@@ -193,7 +194,7 @@ read_otp_file = open("response.text")
 lines = read_otp_file.readlines()
 
 for line in lines:
-   my_otp = str(line[1:6])
+   my_otp = str(line[0:6])
 
 print(color.GREEN + "[!] " + color.CWHITE + "OTP Recieved : " + my_otp)
 
@@ -211,9 +212,8 @@ fill_otp.send_keys(Keys.ENTER)
 
 print(color.GREEN + '[!] ' + color.CWHITE + 'Saving account info as account_generated.txt ')
 print()
+
 with open("account_generated.txt","a+") as file:
-    file.seek(0)
-    data = file.read(10000)
-    if len(data) > 0 :
-       file.write("\n")
-       file.write(my_email + " : " + my_password)
+
+      file.write("\n")
+      file.write(my_email + " : " + my_password)
