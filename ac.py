@@ -50,7 +50,7 @@ capabilities = webdriver.DesiredCapabilities.CHROME
 #webdriver
 
 url = "https://www.instagram.com/accounts/emailsignup/"
-CHROME_DIR = "/home/odball/Downloads/chromedriver"
+CHROME_DIR = ""
 
 browser = webdriver.Chrome(CHROME_DIR, options=options, desired_capabilities=capabilities)
 
