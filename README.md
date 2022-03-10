@@ -1,6 +1,3 @@
-# inscreate
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://python.org)
-
 # Setup
 
 1. Go to https://chromedriver.chromium.org/downloads
