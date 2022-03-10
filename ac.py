@@ -28,6 +28,8 @@ options = Options()
 ua = UserAgent()
 userAgent = ua.random
 
+options.add_argument(f'user-agent={userAgent}')
+
 #Headless mode (set as true to use)
 options.headless = False
 
