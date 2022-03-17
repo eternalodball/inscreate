@@ -20,4 +20,4 @@ python3 ac.py
 ```
 # Note - 
 >### if you try to use it twice with same ip then ig will probably block you , use proxy to avoid it
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/eternalodball)
+
