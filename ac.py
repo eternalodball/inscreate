@@ -54,7 +54,7 @@ capabilities = webdriver.DesiredCapabilities.CHROME
 url = "https://www.instagram.com/accounts/emailsignup/"
 CHROME_DIR = ""
 
-browser = webdriver.Chrome(CHROME_DIR, options=options, desired_capabilities=capabilities)
+browser = webdriver.Chrome(options=options, desired_capabilities=capabilities)
 
 print()
 print( color.GREEN + "[+] " + color.CWHITE + "Using useragent as : " + userAgent)
@@ -67,11 +67,11 @@ browser.get(url)
 #elements
 
 time.sleep(3.517)
-email = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(4) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-fullname = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(5) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-username = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(6) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-Password = browser.find_element(By.CSS_SELECTOR, 'div.WZdjL:nth-child(7) > div:nth-child(1) > label:nth-child(1) > input:nth-child(2)')
-signup_button = browser.find_element(By.CSS_SELECTOR, 'div.bkEs3:nth-child(1)')
+email = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div[3]/div/label/input')
+fullname = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div[4]/div/label/input')
+username = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div[5]/div/label/input')
+Password = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div[6]/div/label/input')
+signup_button = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div[7]/div/button')
 
 # Create temporary email
 
@@ -83,7 +83,7 @@ browser.get("https://mail.tm")
 
 time.sleep(6)
 
-copy_button = browser.find_element(By.XPATH, """//*[@id="address"]""")
+copy_button = browser.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div/input")
 
 copy_button.click()
 
@@ -147,10 +147,10 @@ time.sleep(5)
 
 #elements next page
 
-birthday_month = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(1) > select > option:nth-child(9)')
-birthday_day = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(2) > select > option:nth-child(25)')
-birthday_year = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.bkEs3.DhRcB > div > div > span > span:nth-child(3) > select > option:nth-child(26)')
-birthday_next_button = browser.find_element(By.CSS_SELECTOR, '#react-root > section > main > div > div > div:nth-child(1) > div > div.qF0y9.Igw0E.IwRSH.eGOV_._4EzTm.lC6p0.g6RW6 > button')
+birthday_month = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div/div[4]/div/div/span/span[1]/select/option[3]')
+birthday_day = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div/div[4]/div/div/span/span[2]/select/option[9]')
+birthday_year = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div/div[4]/div/div/span/span[3]/select/option[32]')
+birthday_next_button = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div/div[6]/button')
 
 #Fill the page
 
@@ -182,7 +182,7 @@ time.sleep(2)
 
 # otp page element
 
-read_otp = browser.find_element(By.XPATH, '//*[@id="__layout"]/div/div[2]/main/div/div[2]/ul/li/a/div/div[1]/div[2]/div[2]/div/div[1]').text
+read_otp = browser.find_element(By.XPATH, '/html/body/div[1]/div/div/div[2]/main/div/div[2]/ul/li/a/div/div[1]/div[2]/div[2]/div/div[1]').text
 
 # Read otp from mail
 
@@ -204,7 +204,7 @@ print(color.GREEN + "[!] " + color.CWHITE + "OTP Recieved : " + my_otp)
 
 browser.switch_to.window(browser.window_handles[0])
 time.sleep(1)
-fill_otp = browser.find_element(By.XPATH,'//*[@id="react-root"]/section/main/div/div/div[1]/div[2]/form/div/div[1]/input')
+fill_otp = browser.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/section/main/div/div/div[1]/div[2]/form/div/div[1]/input')
 
 fill_otp.send_keys(my_otp)
 time.sleep(2)
